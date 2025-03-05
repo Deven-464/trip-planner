@@ -81,8 +81,8 @@ function PlacesToVisit({ trip }) {
                 {item.details.places.map((place, i) => (
                 //   <li key={i} className="mt-2">
                     <div className='my-4'>
-                    <p className='text-[#13394e]'><strong>Travel Time:</strong>⏱️{place.timeManagement
-                    }</p>
+                    {/* <p className='text-[#13394e]'><strong>Travel Time:</strong>⏱️{place.timeManagement
+                    }</p> */}
                     {/* <h3 className="font-medium">{place.placeName}</h3> */}
                     {/* <p><strong>Details:</strong> {place.placeDetails}</p> */}
                     <PlaceCardItem place={place}/>

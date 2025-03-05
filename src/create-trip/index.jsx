@@ -361,7 +361,7 @@ navigate('/view-trip/'+docId)
   }
 
   const GetUserProfile = async (tokenInfo) => {
-    console.log("Received Token Info:", tokenInfo);
+    console.log("Received Token Info:", tokenInfo);{}
 
     if (!tokenInfo?.access_token) {
       console.error("❌ Access token is missing!");
