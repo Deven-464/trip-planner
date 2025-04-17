@@ -59,7 +59,7 @@ function PlaceCardItem({ place }) {
             console.log("API Response:", result.data);
 
             if (result.data.places?.length > 0 && result.data.places[0].photos?.length > 0) {
-                const photoName = result.data.places[0].photos[0].name;
+                const photoName = result.data.places[0].photos[1].name;
                 const generatedPhotoUrl = PHOTO_REF_URL.replace('{NAME}', photoName);
                 console.log("Generated Photo URL:", generatedPhotoUrl);
                 setPhotoUrl(generatedPhotoUrl);
@@ -86,7 +86,7 @@ function PlaceCardItem({ place }) {
                 <div className='my-2 flex flex-col gap-2'>
                     <h2 className='font-medium'>⏱️ Travel time: {place.timeTravel}</h2>
                     <h2 className='font-medium'>{place?.placeName}</h2>
-                    <h2 className='text-xl text-gray-600'>🍭 {place.placeDetails}</h2>
+                    <h2 className='text-sm text-gray-600'>🍭 {place.placeDetails}</h2>
                     <h2 className=' text-sm'>🤑 Price {place.ticketsPricing}</h2>
                     <h2 className=' text-sm'> ✨ Rating {place.rating}</h2>
                 </div>
