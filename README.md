@@ -1,4 +1,8 @@
-# React + Vite
+# trip-planner
+
+Trip-planner integrated with AI (Gemini API) will help people plan their way around the world with just one click in a convenient way.
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
