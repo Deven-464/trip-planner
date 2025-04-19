@@ -23,7 +23,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
         {
           role: "user",
           parts: [
-            {text: "Generate Travel Plan for location: Las Vegas, for 3 days for Couple with a Cheap budget, Give me a Hotels options list with Hotel Name, Hotel Address, Price, Hotel image url, Geo Coordinates, Rating, Descriptions and suggest itinerary with placeName, Place Details, Place Image URI, Geo Coordinates, tickets Pricing, rating, timing to travel example(9.00 am to 10.00 am) each of the location for 3 days with each day plan with best time to visit in JSON format.\n"},
+            {text: "Generate Travel Plan for location: Las Vegas, for 3 days for Couple with a Cheap budget, Give me a Hotels options list with Hotel Name, Hotel Address, Price, Hotel image url, Geo Coordinates, Rating, Descriptions and suggest itinerary with placeName, Place Details, Place Image URI, Geo Coordinates, tickets Pricing, rating, timing to travel example(9.00 am to 10.00 am) each of the location for 3 days with each day plan with best time to visit with total cost of whole trip sum every things and total it and give cost for whole trip in JSON format.\n"},
           ],
         },
         {

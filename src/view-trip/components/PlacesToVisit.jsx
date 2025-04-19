@@ -49,15 +49,92 @@
 // export default PlacesToVisit;
 
 
+// import React from 'react';
+// import PlaceCardItem from './PlaceCardItem';
+
+
+// function PlacesToVisit({ trip }) {
+//   console.log("tripData:", trip.tripData); 
+//   console.log("itinerary:", trip.tripData?.itinerary);
+//   console.log("Type of itinerary:", typeof trip.tripData?.itinerary);
+
+//   // Convert itinerary object to an array of { day: "day1", details: {...} }
+//   const itineraryArray = trip.tripData?.itinerary 
+//     ? Object.entries(trip.tripData.itinerary).map(([day, details], index) => ({
+//         day: `Day ${index + 1}`,
+//         details
+//       }))
+//     : [];
+
+//   return (
+//     <div>
+//       <h2 className='font-bold text-xl mt-4 text-[#143b50]'>Places to Visit</h2>
+//       <div>
+//         {itineraryArray.length > 0 ? (
+//           itineraryArray.map((item, index) => (
+//             // <div key={index} className="border p-3 my-2 grid grid-cols-2 gap-3">
+//             <div key={index} className='mt-2'>
+//               <h2 className="font-semibold text-lg">{item.day}</h2>
+//               <div className='grid md:grid-cols-2 gap-6'>
+//               {/* <p><strong>Theme:</strong> {item.details.theme}</p> */}
+//               {/* <p><strong>Best Time to Visit:</strong> {item.details.bestTimeToVisit}</p> */}
+//               {/* <ul> */}
+//                 {item.details.places.map((place, i) => (
+//                 //   <li key={i} className="mt-2">
+//                     <div className='my-4'>
+//                     {/* <p className='text-[#13394e]'><strong>Travel Time:</strong>⏱️{place.timeManagement
+//                     }</p> */}
+//                     {/* <h3 className="font-medium">{place.placeName}</h3> */}
+//                     {/* <p><strong>Details:</strong> {place.placeDetails}</p> */}
+//                     <PlaceCardItem place={place}/>
+//                     {/* <p><strong>Rating:</strong> {place.rating} ⭐</p>
+//                     <p><strong>Travel Time:</strong> {place.timeTravel}</p>
+//                     <p><strong>Tickets:</strong> {place.ticketsPricing}</p> */}
+//                     </div>
+//                     // {place.placeImageURI && (
+//                     //   <img src={place.placeImageURI} alt={place.placeName} className="w-40 h-40 object-cover rounded-lg mt-2" />
+//                     // )}
+//                 //   </li>
+               
+                
+//                 ))}
+//                 </div>
+//               {/* </ul> */}
+//             </div>
+//           ))
+//         ) : (
+//           <p>No itinerary data available</p>
+//         )}
+//         <div className='mt-5'>
+//         {/* <button className="text-yellow-50 hover:scale-105 hover:shadow-md transition-all cursor-pointer">
+//   Book Trip
+// </button> */}
+//  <button
+//       onClick={() => navigate('/payment')}
+//       className="bg-[#204c64] text-white px-4 py-2 rounded hover:bg-[#163547]"
+//     >
+//       Book Now
+//     </button>
+
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default PlacesToVisit;
+
+
+
+
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import PlaceCardItem from './PlaceCardItem';
 
 function PlacesToVisit({ trip }) {
-  console.log("tripData:", trip.tripData); 
-  console.log("itinerary:", trip.tripData?.itinerary);
-  console.log("Type of itinerary:", typeof trip.tripData?.itinerary);
+  const navigate = useNavigate();
 
-  // Convert itinerary object to an array of { day: "day1", details: {...} }
+  // Convert itinerary object to an array
   const itineraryArray = trip.tripData?.itinerary 
     ? Object.entries(trip.tripData.itinerary).map(([day, details], index) => ({
         day: `Day ${index + 1}`,
@@ -71,38 +148,30 @@ function PlacesToVisit({ trip }) {
       <div>
         {itineraryArray.length > 0 ? (
           itineraryArray.map((item, index) => (
-            // <div key={index} className="border p-3 my-2 grid grid-cols-2 gap-3">
             <div key={index} className='mt-2'>
               <h2 className="font-semibold text-lg">{item.day}</h2>
               <div className='grid md:grid-cols-2 gap-6'>
-              {/* <p><strong>Theme:</strong> {item.details.theme}</p> */}
-              {/* <p><strong>Best Time to Visit:</strong> {item.details.bestTimeToVisit}</p> */}
-              {/* <ul> */}
                 {item.details.places.map((place, i) => (
-                //   <li key={i} className="mt-2">
-                    <div className='my-4'>
-                    {/* <p className='text-[#13394e]'><strong>Travel Time:</strong>⏱️{place.timeManagement
-                    }</p> */}
-                    {/* <h3 className="font-medium">{place.placeName}</h3> */}
-                    {/* <p><strong>Details:</strong> {place.placeDetails}</p> */}
-                    <PlaceCardItem place={place}/>
-                    {/* <p><strong>Rating:</strong> {place.rating} ⭐</p>
-                    <p><strong>Travel Time:</strong> {place.timeTravel}</p>
-                    <p><strong>Tickets:</strong> {place.ticketsPricing}</p> */}
-                    </div>
-                    // {place.placeImageURI && (
-                    //   <img src={place.placeImageURI} alt={place.placeName} className="w-40 h-40 object-cover rounded-lg mt-2" />
-                    // )}
-                //   </li>
-                
+                  <div key={i} className='my-4'>
+                    <PlaceCardItem place={place} />
+                  </div>
                 ))}
-                </div>
-              {/* </ul> */}
+              </div>
             </div>
           ))
         ) : (
           <p>No itinerary data available</p>
         )}
+
+        {/* BOOK NOW BUTTON */}
+        <div className='mt-5'>
+          <button
+            onClick={() => navigate('/payment', { state: { trip } })}
+            className="bg-[#204c64] text-white px-4 py-2 rounded hover:bg-[#163547]"
+          >
+            Book Now
+          </button>
+        </div>
       </div>
     </div>
   );

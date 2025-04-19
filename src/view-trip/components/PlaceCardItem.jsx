@@ -77,7 +77,7 @@ function PlaceCardItem({ place }) {
 
     return (
         <Link to={'https://www.google.com/maps/search/?api=1&query=' + place.placeName} target='_blank'>
-            <div className='hover:scale-105 transition-all cursor-pointer'>
+            <div className='hover:scale-105 shadow-lg transition-all cursor-pointer'>
                 <img 
                     src={photoUrl || "/plane.jpg"} 
                     onError={(e) => e.currentTarget.src = "/plane.jpg"} 

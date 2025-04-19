@@ -397,6 +397,7 @@ navigate('/view-trip/'+docId)
   return (
     <div className="sm:px-10 md:px-32 lg:px-56 xl:px-10 px-5 mt-10">
       <h2 className="font-bold text-4xl text-[#204c64]">Tell us your travel preferences</h2>
+      
       <p className="mt-3 text-[#8a3e2d] text-2xl">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
       </p>
@@ -441,7 +442,13 @@ navigate('/view-trip/'+docId)
               >
                 <h2 className="text-4xl">{item.icon}</h2>
                 <h2 className="font-bold text-lg text-[#204c64]">{item.title}</h2>
-                <h2 className="text-sm font-semibold text-[#8a3e2d]">{item.description}</h2>
+                {/* <h2 className="text-sm font-semibold text-[#8a3e2d]">{item.description}</h2> */}
+                <div className="overflow-hidden w-full">
+  <h2 className="text-sm font-semibold text-[#8a3e2d] whitespace-nowrap inline-block animate-marquee">
+    {item.description}
+  </h2>
+</div>
+
               </div>
             ))}
           </div>
