@@ -61,7 +61,7 @@ function PlaceCardItem({ place }) {
             if (result.data.places?.length > 0 && result.data.places[0].photos?.length > 0) {
                 const photoName = result.data.places[0].photos[1].name;
                 const generatedPhotoUrl = PHOTO_REF_URL.replace('{NAME}', photoName);
-                console.log("Generated Photo URL:", generatedPhotoUrl);
+                // console.log("Generated Photo URL:", generatedPhotoUrl);
                 setPhotoUrl(generatedPhotoUrl);
             } else {
                 console.log("No photos found for this place.");
@@ -71,9 +71,9 @@ function PlaceCardItem({ place }) {
         }
     };
 
-    useEffect(() => {
-        if (place) GetPlacePhoto();
-    }, [place]);
+    // useEffect(() => {
+    //     if (place) GetPlacePhoto();
+    // }, [place]);
 
     return (
         <Link to={'https://www.google.com/maps/search/?api=1&query=' + place.placeName} target='_blank'>
