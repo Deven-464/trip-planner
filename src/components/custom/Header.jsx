@@ -156,6 +156,10 @@ function Header() {
             <a href="/page">
             <button className='text-slate-50'>Contact Us</button></a>
           </div>
+          <div>
+            <a href="/page_contact">
+            <button className='text-slate-50'>About Us</button></a>
+          </div>
 
 
             <Popover>

@@ -13,6 +13,10 @@ import MyTrips from './my-trips'
 import About from "./page/about";
 import { Contact } from 'lucide-react'
 import PaymentPage from './payment/paymentpage'
+import ContactUs from './page_contact/contact'
+// import AboutUs from './pages/contact'
+
+
 
 const router=createBrowserRouter([
   {
@@ -33,12 +37,17 @@ const router=createBrowserRouter([
   },
   {
     path: 'page/',
-    element: <About /> // new route for About
+    element: <About /> // new route for 
+  },
+  {
+    path: "page_contact/",
+    element: <ContactUs />
   },
   {
     path: "/payment",
     element: <PaymentPage />
   }
+ 
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
