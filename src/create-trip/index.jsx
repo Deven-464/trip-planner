@@ -399,7 +399,7 @@ navigate('/view-trip/'+docId)
       <h2 className="font-bold text-4xl text-[#204c64]">Tell us your travel preferences</h2>
       
       <p className="mt-3 text-[#8a3e2d] text-2xl">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      Just a few quick answers and we’ll handle the rest of your adventure!.
       </p>
 
       <div className="mt-20 flex flex-col gap-10">

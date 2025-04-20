@@ -25,7 +25,7 @@ export default function ContactUs() {
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 overflow-hidden">
       {/* Navbar */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+      {/* <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center">
             <Globe className={`${isScrolled ? 'text-blue-600' : 'text-white'} mr-2`} size={28} />
@@ -46,7 +46,7 @@ export default function ContactUs() {
             Get Started
           </button>
         </div>
-      </nav>
+      </nav> */}
 
       {/* Hero Section with Parallax Effect */}
       <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white pt-32 pb-20 overflow-hidden">

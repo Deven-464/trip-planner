@@ -33,21 +33,21 @@ export const SelectBudgetOptions=[
     {
         id:1,
         title:'Cheap', 
-        description:'Lorem ispum dodlor tempor inv ide',
+        description:'Explore more, spend less – great adventures on a tight budget',
         icon:'💵',
         
     },
     {
         id:1,
         title:'Moderate', 
-        description:'Lorem ispum dodlor tempor inv ide',
+        description:'Balance comfort and value with well-curated mid-range travel.',
         icon:'💰',
         
     },
     {
         id:1,
         title:'Luxury', 
-        description:'Lorem ispum dodlor tempor inv ide',
+        description:'Indulge in premium experiences, 5-star stays, and personalized comfort.',
         icon:'💎',
         
     }

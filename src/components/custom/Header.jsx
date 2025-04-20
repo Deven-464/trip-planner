@@ -152,6 +152,10 @@ function Header() {
             <a href='/my-trips'>
             <Button variant="outline" className="rounded-full">My Trip</Button>
             </a>
+            <div>
+            <a href="/">
+            <button className='text-slate-50'>Home</button></a>
+          </div>
           <div>
             <a href="/page">
             <button className='text-slate-50'>Contact Us</button></a>
