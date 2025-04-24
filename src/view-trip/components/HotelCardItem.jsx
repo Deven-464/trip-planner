@@ -17,7 +17,7 @@ function HotelCardItem({ hotel }) {
     const match = priceStr?.match(/([€$])[\d]+(?:\.\d+)?\s*-\s*([€$])([\d]+(?:\.\d+)?)/);
     // If there's a range like €25-€50, we'll return the maximum value (€50)
     if (match) {
-      return `${match[1]}${match[3]}`;
+      return `${match[1]}$${match[3]}`;
     }
     // If there's no range, return the price as is (e.g., €100)
     return priceStr || "€120/night"; 
