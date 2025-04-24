@@ -24,6 +24,7 @@ import { BiLoaderCircle } from "react-icons/bi";
 import { db } from "@/service/firebaseConfig";
 import { useNavigate } from "react-router";
 
+
 function CreateTrip() {
   // State Management
   const [place, setPlace] = useState(null);
@@ -75,7 +76,7 @@ function CreateTrip() {
     // Validate Form Data
     if (
       !formData.location ||
-      !formData.noOfDays ||
+      formData.noOfDays == null ||
       !formData.budget ||
       !formData.traveller
     ) {
@@ -209,7 +210,7 @@ function CreateTrip() {
         </div>
 
         {/* Number of Days */}
-        <div>
+        {/* <div>
           <h2 className="text-xl my-3 font-semibold text-[#204c64]">
             How many days?
           </h2>
@@ -217,10 +218,59 @@ function CreateTrip() {
             placeholder="Ex. 3"
             type="number"
             min="1"
-            max="15"
+            max="6"
             onChange={(e) => handleInputChange("noOfDays", e.target.value)}
           />
-        </div>
+        </div> */}
+
+<div>
+  <h2 className="text-xl my-3 font-semibold text-[#204c64]">
+    How many days?
+  </h2>
+  <Input
+  placeholder="Ex. 3"
+  type="number"
+  min="1"
+  max="6"
+  onChange={(e) => {
+    const value = parseInt(e.target.value, 10);
+  
+    if (isNaN(value) || value <= 0) {
+      toast.error("Please enter a value greater than 0.");
+      handleInputChange("noOfDays", null);
+      return;
+    }
+  
+    if (value > 6) {
+      toast.error("Trip duration cannot exceed 6 days.");
+      handleInputChange("noOfDays", null);
+      return;
+    }
+  
+    handleInputChange("noOfDays", value);
+  }}
+  
+/>
+
+  {/* <Input
+    placeholder="Ex. 3"
+    type="number"
+    min="1"
+    max="6"
+    onChange={(e) => {
+      const value = parseInt(e.target.value, 10);
+      if (value >= 1 && value <= 6) {
+        handleInputChange("noOfDays", value);
+        toast('Please a Valid Number')
+        
+      } else {
+        handleInputChange("noOfDays", ""); 
+        // Or show an error message
+      }
+    }}
+  /> */}
+</div>
+
 
         {/* Budget Selection */}
         <div>

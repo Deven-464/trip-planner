@@ -36,6 +36,7 @@ export const SelectBudgetOptions=[
         description:'Explore more, spend less – great adventures on a tight budget',
         icon:'💵',
         
+        
     },
     {
         id:1,
